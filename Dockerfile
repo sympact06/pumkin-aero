@@ -30,7 +30,7 @@
 # ----------------------------------------------------------------------------
 
 # --- Build stage ------------------------------------------------------------
-FROM rust:1.69-slim AS builder
+FROM rust:1.78-slim AS builder
 
 # Install required build dependencies
 RUN apt-get update \
@@ -40,7 +40,7 @@ RUN apt-get update \
 
 # Source retrieval arguments
 ARG GIT_URL="https://github.com/Pumpkin-MC/Pumpkin.git"
-ARG GIT_BRANCH="master"
+ARG GIT_BRANCH="main"
 ARG GIT_COMMIT=""
 
 WORKDIR /src

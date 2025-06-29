@@ -2,7 +2,8 @@ name: Build & Publish Pumpkin Image
 
 on:
   push:
-    branches: [ master ]  # build when pushing to master
+    branches:
+      - main  
 
 permissions:
   contents: read
