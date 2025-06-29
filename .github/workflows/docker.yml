@@ -46,4 +46,5 @@ jobs:
           platforms: linux/amd64
 
       - name: Output image digest
-        run: echo "Image published: ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:latest" 
+        run: |
+          echo "Image published: ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:latest" 
