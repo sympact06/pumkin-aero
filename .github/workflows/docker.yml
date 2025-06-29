@@ -1,9 +1,9 @@
-name: Build & Publish Pumpkin Image
+name: "Build & Publish Pumpkin Image"
 
 on:
   push:
     branches:
-      - main  
+      - main
 
 permissions:
   contents: read
