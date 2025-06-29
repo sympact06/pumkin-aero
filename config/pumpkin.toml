@@ -1,0 +1,10 @@
+# ----------------------------------------------------------------------------
+# Attribution Assurance License (AAL)
+# Copyright © 2025 AERO Company (Olivier Flentge)
+# This configuration file is distributed under the same license as the Software.
+# ----------------------------------------------------------------------------
+
+# Default Pumpkin server configuration
+server-port = 25565
+max-players = 20
+motd = "Welcome to my AERO server!" 

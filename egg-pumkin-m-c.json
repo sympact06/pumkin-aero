@@ -1,0 +1,52 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2025-06-29T21:40:20+02:00",
+    "name": "PumkinMC",
+    "author": "info@aero.nu",
+    "description": "Rust-based Pumpkin MC server by AERO Company",
+    "features": null,
+    "docker_images": {
+        "ghcr.io\/sympact06\/pumpkin:latest": "ghcr.io\/sympact06\/pumpkin:latest"
+    },
+    "file_denylist": [],
+    "startup": "\/usr\/local\/bin\/pumpkin --config config\/pumpkin.toml",
+    "config": {
+        "files": "{\r\n  \"config\/pumpkin.toml\": {\r\n    \"parser\": \"toml\",\r\n    \"find\": {\r\n      \"server-port\": \"{{server.build.default.port}}\",\r\n      \"max-players\": \"{{env.MAX_PLAYERS}}\",\r\n      \"motd\": \"{{env.MOTD}}\"\r\n    }\r\n  }\r\n}",
+        "startup": "{}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n# ---------------------------------------------------------------------------\r\n# PumpkinMC \u2013 Pterodactyl install script\r\n# Nothing needs to be downloaded or compiled because the Docker image\r\n# already contains the entire server.  This script exists only because\r\n# Pterodactyl requires a non-empty install script.\r\n# ---------------------------------------------------------------------------\r\nset -e\r\n\r\necho \"No installation steps required \u2014 the image already contains everything.\"\r\nexit 0",
+            "container": "alpine:3.4",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Maximum Players",
+            "description": "Maximum concurrent players allowed on the server.",
+            "env_variable": "MAX_PLAYERS",
+            "default_value": "20",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|numeric",
+            "field_type": "text"
+        },
+        {
+            "name": "Message of the Day",
+            "description": "MOTD shown in the server list.",
+            "env_variable": "MOTD",
+            "default_value": "Welcome to my AERO server!",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:100",
+            "field_type": "text"
+        }
+    ]
+}
